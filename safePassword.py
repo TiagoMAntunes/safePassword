@@ -14,14 +14,26 @@ def menu():
             else:
                 print("Enter a value between 1-4!")
         if selection == '1':
-            print(1)
+            newPassMenu()
         elif selection == '2':
-            print(2)
+            seePassMenu()
         elif selection == '3':
-            print(3)
+            deletePassMenu()
         elif selection == '4':
             active = False
         if active == False:
             return 0
+
+def newPassMenu():
+    location = input("What website/program are you saving? ")
+    username = input("Please enter your username: ")
+    userPassword = input("Please enter your password: ")
+    print("Saved your username ", username, " with the password ", userPassword, " for ", location)
+
+def seePassMenu():
+    toSearch = input("Enter the website/program you want to search for: ")
+
+def deletePassMenu():
+    toSearch = input("Enter the website/program name you wish to delete: ")
 
 menu()
