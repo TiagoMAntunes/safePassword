@@ -25,14 +25,23 @@ def menu():
             return 0
 
 def newPassMenu():
+    import os
+    f = open("data.txt", "a")
     location = input("What website/program are you saving? ")
     username = input("Please enter your username: ")
     userPassword = input("Please enter your password: ")
     print("Saved your username ", username, " with the password ", userPassword, " for ", location)
-
+    f.write(location + "|" + username + "|" + userPassword + "\n")
+    f.close()
 def seePassMenu():
-    toSearch = input("Enter the website/program you want to search for: ")
-
+    toSearch = input("Enter the website/program you want to search fo (type '_' if you want to list all of them): ")
+    f = open("data.txt", 'r')
+    for a in f:
+        s = a.split("|")
+        if(s[0] == toSearch or toSearch == '_'):
+            print("Website/Application: " + s[0])
+            print("Username: " + s[1])
+            print("Password: " + s[2])
 def deletePassMenu():
     toSearch = input("Enter the website/program name you wish to delete: ")
 
