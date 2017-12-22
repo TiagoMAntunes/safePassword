@@ -10,3 +10,6 @@ What you will be able to do:
 - Have multiple users;
 - Login with username and password;
 - GUI
+
+What is missing and is super important:
+- Encrypt data
